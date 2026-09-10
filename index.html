@@ -1,203 +1,451 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-<title>خيمة البيظان | Khaymt El Bidan</title>
-<meta name="description" content="بوابة تفاعلية لتوثيق تراث الصحراء الغربية وموريتانيا والطوارق">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap');
+<!DOCTYPE html>  <html lang="ar" dir="rtl">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">  
+<title>خيمة البيظان | Khaymt El Bidan</title>  
+<meta name="description" content="بوابة تفاعلية لتوثيق تراث الصحراء الغربية وموريتانيا والطوارق">  
+<style>  
+  @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap');  :root{
+--night:#1B2A45;
+--night-deep:#111c30;
+--sand:#E8DCC0;
+--sand-light:#F4EFE0;
+--copper:#A8562E;
+--copper-bright:#C96A3B;
+--line: rgba(232,220,192,0.18);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+background:var(--night);
+color:var(--sand-light);
+font-family:'Tajawal', sans-serif;
+line-height:1.8;
+overflow-x:hidden;
+}
+h1{
+font-family:'Aref Ruqaa', serif;
+font-weight:700;
+}
+h2,h3,.display{
+font-family:'Tajawal', sans-serif;
+font-weight:700;
+}
+a{color:inherit;text-decoration:none;}
 
-  :root{
-    --night:#1B2A45;
-    --night-deep:#111c30;
-    --sand:#E8DCC0;
-    --sand-light:#F4EFE0;
-    --copper:#A8562E;
-    --copper-bright:#C96A3B;
-    --line: rgba(232,220,192,0.18);
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--night);
-    color:var(--sand-light);
-    font-family:'Tajawal', sans-serif;
-    line-height:1.8;
-    overflow-x:hidden;
-  }
-  h1{
-    font-family:'Aref Ruqaa', serif;
-    font-weight:700;
-  }
-  h2,h3,.display{
-    font-family:'Tajawal', sans-serif;
-    font-weight:700;
-  }
-  a{color:inherit;text-decoration:none;}
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:8vh 6vw;
+position:relative;
+background:
+radial-gradient(ellipse at 50% 15%, rgba(169,86,46,0.15), transparent 60%),
+linear-gradient(180deg, var(--night) 0%, var(--night-deep) 100%);
+}
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background-image: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(232,220,192,0.02) 40px, rgba(232,220,192,0.02) 41px);
+pointer-events:none;
+}
+.kicker{
+font-size:0.95rem;
+color:var(--copper-bright);
+letter-spacing:0.02em;
+margin-bottom:1.4rem;
+}
+.hero h1{
+font-size:clamp(2.6rem, 7vw, 5rem);
+line-height:1.25;
+max-width:16ch;
+}
+.hero p{
+max-width:42ch;
+margin-top:1.6rem;
+font-size:1.15rem;
+color:rgba(244,239,224,0.75);
+}
+.scroll-hint{
+margin-top:4rem;
+width:1px;
+height:60px;
+background:linear-gradient(var(--copper-bright), transparent);
+animation:pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse{
+0%,100%{opacity:0.3;}
+50%{opacity:1;}
+}
 
-  .hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:8vh 6vw;
-    position:relative;
-    background:
-      radial-gradient(ellipse at 50% 15%, rgba(169,86,46,0.15), transparent 60%),
-      linear-gradient(180deg, var(--night) 0%, var(--night-deep) 100%);
-  }
-  .hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(232,220,192,0.02) 40px, rgba(232,220,192,0.02) 41px);
-    pointer-events:none;
-  }
-  .kicker{
-    font-size:0.95rem;
-    color:var(--copper-bright);
-    letter-spacing:0.02em;
-    margin-bottom:1.4rem;
-  }
-  .hero h1{
-    font-size:clamp(2.6rem, 7vw, 5rem);
-    line-height:1.25;
-    max-width:16ch;
-  }
-  .hero p{
-    max-width:42ch;
-    margin-top:1.6rem;
-    font-size:1.15rem;
-    color:rgba(244,239,224,0.75);
-  }
-  .scroll-hint{
-    margin-top:4rem;
-    width:1px;
-    height:60px;
-    background:linear-gradient(var(--copper-bright), transparent);
-    animation:pulse 2.4s ease-in-out infinite;
-  }
-  @keyframes pulse{
-    0%,100%{opacity:0.3;}
-    50%{opacity:1;}
-  }
+section{
+padding:10vh 6vw;
+max-width:1100px;
+margin:0 auto;
+}
+.section-head{
+margin-bottom:4rem;
+}
+.section-head .kicker{margin-bottom:0.8rem;}
+.section-head h2{
+font-size:clamp(1.8rem, 4vw, 2.6rem);
+}
 
-  section{
-    padding:10vh 6vw;
-    max-width:1100px;
-    margin:0 auto;
-  }
-  .section-head{
-    margin-bottom:4rem;
-  }
-  .section-head .kicker{margin-bottom:0.8rem;}
-  .section-head h2{
-    font-size:clamp(1.8rem, 4vw, 2.6rem);
-  }
+.portals{
+display:grid;
+grid-template-columns: 1.2fr 1fr;
+gap:1.5rem;
+}
+.portal{
+border:1px solid var(--line);
+padding:2.5rem;
+position:relative;
+cursor:pointer;
+transition:border-color 0.3s ease, background 0.3s ease;
+}
+.portal:hover{
+border-color:var(--copper-bright);
+background:rgba(169,86,46,0.06);
+}
+.portal.wide{grid-column:1 / -1;}
+.portal .num{
+font-family:'Aref Ruqaa', serif;
+font-size:0.85rem;
+color:var(--copper-bright);
+display:block;
+margin-bottom:1rem;
+}
+.portal h3{
+font-size:1.6rem;
+margin-bottom:0.9rem;
+}
+.portal .sub{
+color:var(--copper-bright);
+font-size:0.95rem;
+margin-bottom:1rem;
+}
+.portal p{
+color:rgba(244,239,224,0.72);
+font-size:1rem;
+}
+.portal-body{
+max-height:0;
+overflow:hidden;
+transition:max-height 0.5s ease;
+}
+.portal.open .portal-body{
+max-height:3500px;
+margin-top:1.5rem;
+padding-top:1.5rem;
+border-top:1px solid var(--line);
+}
+.portal-body ul{list-style:none;}
+.portal-body li{
+padding:0.6rem 0;
+border-bottom:1px dashed var(--line);
+color:rgba(244,239,224,0.8);
+}
+.portal-body li:last-child{border-bottom:none;}
+.portal-body li b{color:var(--sand-light);}
 
-  .portals{
-    display:grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap:1.5rem;
-  }
-  .portal{
-    border:1px solid var(--line);
-    padding:2.5rem;
-    position:relative;
-    cursor:pointer;
-    transition:border-color 0.3s ease, background 0.3s ease;
-  }
-  .portal:hover{
-    border-color:var(--copper-bright);
-    background:rgba(169,86,46,0.06);
-  }
-  .portal.wide{grid-column:1 / -1;}
-  .portal .num{
-    font-family:'Aref Ruqaa', serif;
-    font-size:0.85rem;
-    color:var(--copper-bright);
-    display:block;
-    margin-bottom:1rem;
-  }
-  .portal h3{
-    font-size:1.6rem;
-    margin-bottom:0.9rem;
-  }
-  .portal .sub{
-    color:var(--copper-bright);
-    font-size:0.95rem;
-    margin-bottom:1rem;
-  }
-  .portal p{
-    color:rgba(244,239,224,0.72);
-    font-size:1rem;
-  }
-  .portal-body{
-    max-height:0;
-    overflow:hidden;
-    transition:max-height 0.5s ease;
-  }
-  .portal.open .portal-body{
-    max-height:3500px;
-    margin-top:1.5rem;
-    padding-top:1.5rem;
-    border-top:1px solid var(--line);
-  }
-  .portal-body ul{list-style:none;}
-  .portal-body li{
-    padding:0.6rem 0;
-    border-bottom:1px dashed var(--line);
-    color:rgba(244,239,224,0.8);
-  }
-  .portal-body li:last-child{border-bottom:none;}
-  .portal-body li b{color:var(--sand-light);}
+@media (max-width:720px){
+.portals{grid-template-columns:1fr;}
+.portal.wide{grid-column:auto;}
+}
 
-  @media (max-width:720px){
-    .portals{grid-template-columns:1fr;}
-    .portal.wide{grid-column:auto;}
-  }
+.quiz-box{
+border:1px solid var(--line);
+padding:3rem;
+background:rgba(17,28,48,0.4);
+}
+.quiz-progress{
+display:flex;
+gap:0.4rem;
+margin-bottom:2.5rem;
+}
+.quiz-progress span{
+flex:1;
+height:3px;
+background:var(--line);
+}
+.quiz-progress span.done{background:var(--copper-bright);}
 
-  .quiz-box{
-    border:1px solid var(--line);
-    padding:3rem;
-    background:rgba(17,28,48,0.4);
-  }
-  .quiz-progress{
-    display:flex;
-    gap:0.4rem;
-    margin-bottom:2.5rem;
-  }
-  .quiz-progress span{
-    flex:1;
-    height:3px;
-    background:var(--line);
-  }
-  .quiz-progress span.done{background:var(--copper-bright);}
+.q-text{
+font-size:1.3rem;
+margin-bottom:1.8rem;
+font-weight:700;
+}
+.choices{
+display:flex;
+flex-direction:column;
+gap:0.8rem;
+}
+.choice{
+text-align:right;
+padding:1rem 1.4rem;
+border:1px solid var(--line);
+background:transparent;
+color:var(--sand-light);
+font-family:'Tajawal', sans-serif;
+font-size:1rem;
+cursor:pointer;
+transition:all 0.2s ease;
+}
+.choice:hover{border-color:var(--copper-bright);}
+.choice.correct{border-color:#6b9c5f;background:rgba(107,156,95,0.12);}
+.choice.wrong{border-color:#a85c5c;background:rgba(168,92,92,0.12);}
+.choice[disabled]{cursor:default;}
 
-  .q-text{
-    font-size:1.3rem;
-    margin-bottom:1.8rem;
-    font-weight:700;
-  }
-  .choices{
-    display:flex;
-    flex-direction:column;
-    gap:0.8rem;
-  }
-  .choice{
-    text-align:right;
-    padding:1rem 1.4rem;
-    border:1px solid var(--line);
-    background:transparent;
-    color:var(--sand-light);
-    font-family:'Tajawal', sans-serif;
-    font-size:1rem;
-    cursor:pointer;
-    transition:all 0.2s ease;
-  }
-  .choice:hover{border-color:var(--copper-bright);}
-  .choice.correct{border-color:#6b9c5f;background:rgba(107,156,95,0.12);}
-  .choice.wrong{border-color:#a85c5c;background:rgba(168,92
+.quiz-footer{
+margin-top:2rem;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+.btn-next{
+background:var(--copper);
+color:var(--sand-light);
+border:none;
+padding:0.8rem 2rem;
+font-family:'Tajawal', sans-serif;
+font-size:1rem;
+cursor:pointer;
+display:none;
+}
+.btn-next.show{display:inline-block;}
+
+.cert{
+text-align:center;
+padding:2rem 0;
+}
+.cert h3{
+font-size:2rem;
+color:var(--copper-bright);
+margin-bottom:1rem;
+}
+.cert .score{
+font-size:3.5rem;
+font-family:'Aref Ruqaa', serif;
+margin:1.5rem 0;
+}
+.cert p{color:rgba(244,239,224,0.7);}
+
+footer{
+text-align:center;
+padding:5vh 6vw;
+border-top:1px solid var(--line);
+color:rgba(244,239,224,0.45);
+font-size:0.9rem;
+}
+</style>
+
+</head>  
+<body>  <div class="hero">  
+  <div class="kicker">تراث · معرفة · إنجاز</div>  
+  <h1>خيمة البيظان</h1>  
+  <p>بوابة تفاعلية لتوثيق ونشر تراث الصحراء الغربية وموريتانيا وثقافة الطوارق — أدب وموسيقى وتاريخ، بصوت أهله.</p>  
+  <div class="scroll-hint"></div>  
+</div>  <section id="portals">  
+  <div class="section-head">  
+    <div class="kicker">البوابات الثقافية</div>  
+    <h2>ثلاثة أبواب إلى الذاكرة</h2>  
+  </div>    <div class="portals">  
+    <div class="portal wide" onclick="this.classList.toggle('open')">  
+      <span class="num">١</span>  
+      <h3>بوابة الأدب والشعر</h3>  
+      <div class="sub">لغة الحسانية والأمثال والمسرح</div>  
+      <p>الشعر الحساني ليس زخرفة لسانية بل سجل اجتماعي كامل — فيه المدح والهجاء والغزل والحكمة، ينتقل من فم إلى فم عبر الأجيال.</p>  
+      <div class="portal-body">  
+        <ul>  
+          <li><b>الشعر الحساني:</b> فن قولي منظوم بحوره الخاصة، يروى شفاهاً في المجالس ويحفظ عن ظهر قلب.</li>  
+          <li><b>الأمثال:</b> خلاصة تجارب الأولين، تُستخدم في الحياة اليومية كحجة وفصل في الخلاف.</li>  
+          <li><b>المسرح الصحراوي:</b> تمثيل شعبي يعيد سرد الملاحم والمواقف الاجتماعية أمام الجمهور.</li>  
+        </ul>  <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line);">  
+      <h4 style="font-family:'Tajawal',sans-serif;color:var(--copper-bright);margin-bottom:0.5rem;">يالدلال أعليك المنيَ</h4>  
+      <p style="font-size:0.9rem;color:rgba(244,239,224,0.6);margin-bottom:1rem;">للأديب بادي ولد محمد سالم — رحمه الله</p>  
+      <div style="font-size:1.05rem;line-height:2.2;white-space:pre-line;">
+
+يالـــدّلال أعليـــــــــك المنيَ فالدّنيا ماخــــلاّت أگدح
+باش أترگ اعليــــــك الدنيا خرص فالفِيّــــاظ ؤلفكح
+حد أعل لفكح فــايت خاظ مـــــرات وعرّص فالفيّاظ
+بين أكحال الحجره وأبياظ البـــطحه دوْرس وأتبطح
+عهد الشبــــاب ؤكال أرياظ لفــكح والفيّــــاظ وأفكح
+تحت أمّـــو ماگام أشَظَـاظ مـــــــــانلّ گاع ؤلاهو وَح
+ينعد أعل روص الحفّــــاظ مطرّگ مـــــــــزال إيلحلح
+مسحّم بالمسك ولخــــواظ روْرح وأستمـلح وأتفروح
+ؤوخظ بين أشيوخ الگراظ ماحنحـــــــــلو حد ؤلاكح
+سمّــاع وشـــوّاف وحفـّـاظ ؤلاگط أشبــابو بيه أطفح
+عن شي بيه إيلاجَ يغتـــاظ فالناس ويرجـــع مانفظح
+فوطانــــو مستغرظ تگباظ دلوْ الدنيـــــا بيدو وأطرح
+حوظو متمونك بين أحياظ لفكح والفيّـــــاظ أمگروح
+مايخشَ من جيـــــها ترياظ إروح أفلمـــــــان ويسرح
+ؤخاظ اليوم أعل لفكح عاظ كابيـــتْ الشيخوخه يدلح
+فالفيــــــظه راگب واللّ گاظ گاطعها من تحت المطلح
+من بل أمنيــــن الواد أعراظ أهلو وأحبـــــــابو لمرشّح
+مارَ من ذكامـــــــــــــل گبّاظ أخبــــار ؤوّللّ مستكسح
+ماتنشــاف أعليـــه إيل خاظ الشيطــــان وتاب ؤسبّح
+وسّگـــــــم بالفعــل وللْفـــاظ شور اللّي باخرتو يصلح
+</div>
+</div>
+
+<div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line);">  
+      <h4 style="font-family:'Tajawal',sans-serif;color:var(--copper-bright);margin-bottom:0.5rem;">دمع العين</h4>  
+      <div style="font-size:1.05rem;line-height:2.2;white-space:pre-line;">
+
+مشى دمع العين التفگاد==بزوان ءونست لغياد
+والشبان وتفگاد امراد==عگلي فاتت فالدهر اعليه
+ماهو ذا الدهر وگيم زاد==العگلي لحنين الماضيه
+وگام الحزم من اشطيط ارگاد==الحزم على دمعي يمريه
+ويمشيه على ماضي گاد==ما يجبر فيه اللي يبكيه
+غير اعيا ول آدم ينزاد==حزمو من شي عاد امعسريه
+
+تعيا عينو بالدمع اتجود==گاع الا تختير اتمشيه
+واعيات املي زاد اتعود==مسكينة ما تتحكم فيه
+
+شين على حد اكبير يظل==دمعو تيجكريت يهطل
+ويبات اميرر ماورظل==دمعو رمشت عين افعينيه
+يبكي دهرو مزال اطفل== مسكين أيام الطرب اعليه
+باكي فيه انو عاد اكهل==واستطفيلو ذاك اسمح فيه
+وعاد افطربو ذاك امگلل==وياسر من طربو مستنسيه
+
+تعيا عينو بالدمع اتجود==گاع ألا تختير اتمشيه
+واعيات املي زاد اتعود==مسكينة ما تتحكم فيه
+</div>
+<p style="font-size:0.9rem;color:var(--copper-bright);margin-top:1rem;text-align:left;">#الزعيم_علال_الداف</p>
+</div>
+</div>
+</div>
+
+<div class="portal" onclick="this.classList.toggle('open')">  
+  <span class="num">٢</span>  
+  <h3>بوابة الأنغام والألحان</h3>  
+  <div class="sub">الآزوان والآلات التقليدية</div>  
+  <p>موسيقى الآزوان نظام لحني متكامل له قواعده الخاصة.</p>  
+  <div class="portal-body">  
+    <ul>  
+      <li><b>التيدنيت:</b> آلة وترية يعزفها الرجال، عمود الآزوان الأساسي.</li>  
+      <li><b>الآردين:</b> آلة قيثارية تعزفها النساء، صوتها المميز في الأعراس والمناسبات.</li>  
+      <li><b>الإمزاد:</b> آلة الطوارق ذات الوتر الواحد، ترتبط بالشعر والغناء الطارقي.</li>  
+    </ul>  
+  </div>  
+</div>  
+
+<div class="portal" onclick="this.classList.toggle('open')">  
+  <span class="num">٣</span>  
+  <h3>بوابة الذاكرة والتاريخ</h3>  
+  <div class="sub">الصحراء الغربية وموريتانيا والطوارق</div>  
+  <p>من دروب القوافل القديمة إلى الحاضر، تاريخ منطقة شكّلتها التجارة والترحال والصمود.</p>  
+  <div class="portal-body">  
+    <ul>  
+      <li><b>طرق القوافل:</b> شبكة تجارية ربطت الصحراء بغرب أفريقيا وشمالها عبر قرون.</li>  
+      <li><b>البنية القبلية:</b> نظام اجتماعي نظّم العلاقات والتحالفات والموارد.</li>  
+      <li><b>الحاضر المعاصر:</b> قضايا الهوية والانتماء التي لا تزال تشكّل حياة أهل المنطقة اليوم.</li>  
+    </ul>  
+  </div>  
+</div>
+
+  </div>  
+</section>  <section id="quiz">  
+  <div class="section-head">  
+    <div class="kicker">تحدي المعرفة</div>  
+    <h2>اختبر معرفتك بالتراث</h2>  
+  </div>    <div class="quiz-box">  
+    <div class="quiz-progress" id="progress"></div>  
+    <div id="quiz-content"></div>  
+    <div class="quiz-footer">  
+      <span id="feedback" style="color:rgba(244,239,224,0.6);font-size:0.9rem;"></span>  
+      <button class="btn-next" id="nextBtn" onclick="nextQuestion()">التالي</button>  
+    </div>  
+  </div>  
+</section>  <footer>  
+  خيمة البيظان — تطبيق تفاعلي لتوثيق تراث الصحراء الغربية وموريتانيا والطوارق  
+</footer>  <script>  
+const questions = [  
+  {q:"ما اسم الآلة الوترية التي يعزفها الرجال في موسيقى الآزوان؟", choices:["التيدنيت","الآردين","الإمزاد","الدف"], correct:0},  
+  {q:"آلة الإمزاد ذات الوتر الواحد ترتبط بثقافة أي شعب؟", choices:["الفولاني","الطوارق","الوولوف","البمبارا"], correct:1},  
+  {q:"ما الدور الأساسي للأمثال الشعبية في المجتمع الصحراوي؟", choices:["الترفيه فقط","تعليم الأطفال القراءة","خلاصة تجارب تُستخدم في فصل الخلافات","تمجيد الحكام"], correct:2},  
+  {q:"الآردين آلة موسيقية يعزفها في العادة:", choices:["الرجال","النساء","الأطفال","الشيوخ فقط"], correct:1},  
+  {q:"طرق القوافل الصحراوية القديمة ربطت المنطقة بـ:", choices:["أوروبا فقط","غرب أفريقيا وشمالها","آسيا","لا شيء، كانت معزولة"], correct:1},  
+];  
+  
+let current = 0;  
+let score = 0;  
+let answered = false;  
+  
+function renderProgress(){  
+  const bar = document.getElementById('progress');  
+  bar.innerHTML = questions.map((_,i)=>`<span class="${i<current?'done':''}"></span>`).join('');  
+}  
+  
+function renderQuestion(){  
+  answered = false;  
+  document.getElementById('nextBtn').classList.remove('show');  
+  document.getElementById('feedback').textContent = '';  
+  renderProgress();  
+  
+  const item = questions[current];  
+  const content = document.getElementById('quiz-content');  
+  content.innerHTML = `  
+    <div class="q-text">${item.q}</div>  
+    <div class="choices">  
+      ${item.choices.map((c,i)=>`<button class="choice" data-i="${i}" onclick="selectAnswer(${i})">${c}</button>`).join('')}  
+    </div>  
+  `;  
+}  
+  
+function selectAnswer(i){  
+  if(answered) return;  
+  answered = true;  
+  const item = questions[current];  
+  const buttons = document.querySelectorAll('.choice');  
+  buttons.forEach((b,idx)=>{  
+    b.disabled = true;  
+    if(idx === item.correct) b.classList.add('correct');  
+    else if(idx === i) b.classList.add('wrong');  
+  });  
+  if(i === item.correct){  
+    score++;  
+    document.getElementById('feedback').textContent = 'إجابة صحيحة';  
+  } else {  
+    document.getElementById('feedback').textContent = 'إجابة غير صحيحة';  
+  }  
+  document.getElementById('nextBtn').classList.add('show');  
+  document.getElementById('nextBtn').textContent = (current === questions.length - 1) ? 'عرض النتيجة' : 'التالي';  
+}  
+  
+function nextQuestion(){  
+  current++;  
+  if(current >= questions.length){  
+    showResult();  
+  } else {  
+    renderQuestion();  
+  }  
+}  
+  
+function showResult(){  
+  document.getElementById('nextBtn').classList.remove('show');  
+  document.getElementById('feedback').textContent = '';  
+  renderProgress();  
+  document.getElementById('progress').innerHTML = questions.map(()=>`<span class="done"></span>`).join('');  
+  
+  let level = 'مبتدئ';  
+  if(score >= questions.length - 1) level = 'خبير';  
+  else if(score >= questions.length - 2) level = 'متمرّس';  
+  
+  document.getElementById('quiz-content').innerHTML = `  
+    <div class="cert">  
+      <div class="kicker">شهادة إنجاز</div>  
+      <h3>مستوى: ${level}</h3>  
+      <div class="score">${score} / ${questions.length}</div>  
+      <p>أجبت بشكل صحيح على ${score} من أصل ${questions.length} أسئلة حول تراث الصحراء والحسانية والطوارق.</p>  
+    </div>  
+  `;  
+}  
+  
+renderQuestion();  
+</script>  </body>  
+</html>
