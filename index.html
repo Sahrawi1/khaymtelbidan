@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#332219;--muted:#765848;--paper:#fffaf2;--line:rgba(92,58,37,.14);--shadow:0 13px 34px rgba(74,45,28,.13);--red:#8f4942;--blue:#466984;--green:#60785b;--gold:#98703b;--copper:#9b633f;--violet:#75657f}
+:root{--ink:#332219;--muted:#765848;--paper:#fffaf2;--paper2:#fff3df;--line:rgba(92,58,37,.14);--shadow:0 13px 34px rgba(74,45,28,.13);--red:#8f4942;--blue:#466984;--green:#60785b;--gold:#98703b;--copper:#9b633f;--violet:#75657f}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:20px}
 body{margin:0;background:#c9955f;color:var(--ink);font:16px/1.6 "Tajawal",sans-serif;overflow-x:hidden}
@@ -20,6 +20,7 @@ button{color:inherit}
 a{color:inherit;text-decoration:none}
 img{display:block;width:100%}
 .site{width:min(1180px,100%);margin:auto;min-height:100vh;background:linear-gradient(#ecc99b,#f6e1c0 38%,#efd4ae);box-shadow:0 0 70px rgba(65,38,21,.18)}
+
 .hero{position:relative;height:clamp(540px,62vw,720px);overflow:hidden;background:#d8a66d}
 .hero-media{position:absolute;inset:0;margin:0}
 .hero-media picture,.hero-media img{height:100%}
@@ -33,14 +34,15 @@ img{display:block;width:100%}
 .mini small{font-family:Georgia,serif}
 .mark{color:#a66114;font-size:2rem;line-height:.8}
 .motto{justify-self:end;direction:rtl;padding:9px 14px;border-radius:20px;background:#fff7e7aa;text-align:center;font-weight:600;line-height:1.35}
-.hero-copy{position:absolute;z-index:2;top:22%;left:50%;transform:translateX(-50%);width:min(88%,820px);text-align:center;color:#4a2a1b;text-shadow:0 3px 18px #fff5e8}
-.hero-copy h1{margin:0;font:700 clamp(4rem,12vw,8.5rem)/.95 "Aref Ruqaa",serif}
-.latin{font:clamp(1.45rem,4vw,2.7rem) Georgia,serif;letter-spacing:.1em}
-.hero-copy p{display:inline-block;margin-top:14px;padding:6px 17px;border-radius:99px;background:#fff8ec99;font-weight:700}
+.hero-copy{position:absolute;z-index:2;top:22%;left:50%;transform:translateX(-50%);width:min(88%,820px);text-align:center;color:#4a2a1b}
+.hero-copy h1{margin:0;color:#FFF4DF;text-shadow:0 3px 10px rgba(0,0,0,.75);font:700 clamp(4rem,12vw,8.5rem)/.95 "Aref Ruqaa",serif}
+.latin{color:#FFF4DF;text-shadow:0 3px 10px rgba(0,0,0,.75);font:clamp(1.45rem,4vw,2.7rem) Georgia,serif;letter-spacing:.1em}
+.hero-copy p{display:inline-block;margin-top:14px;padding:6px 17px;border-radius:99px;background:#fff8ecbb;color:#4a2a1b;font-weight:700}
 .hero-note{position:absolute;z-index:2;right:4%;bottom:38px;color:#fff;font:1.8rem/1.2 "Aref Ruqaa",serif;text-shadow:0 3px 10px #32170c}
+
 main{position:relative;z-index:5;margin-top:-28px;padding:0 clamp(12px,3vw,34px) 115px}
-.portal-grid{display:grid;gap:18px}
-.portal{--accent:var(--red);display:grid;grid-template-columns:minmax(235px,35%) 1fr;background:#fffaf2f5;border:1px solid #ffffffcc;border-radius:27px;overflow:hidden;box-shadow:var(--shadow)}
+.portal-grid{display:grid!important;visibility:visible!important;opacity:1!important;gap:18px}
+.portal{--accent:var(--red);display:grid;visibility:visible;grid-template-columns:minmax(235px,35%) 1fr;background:#fffaf2f5;border:1px solid #ffffffcc;border-radius:27px;overflow:hidden;box-shadow:var(--shadow)}
 .portal:nth-child(2){--accent:var(--blue)}
 .portal:nth-child(3){--accent:var(--green)}
 .portal:nth-child(4){--accent:var(--gold)}
@@ -66,10 +68,12 @@ main{position:relative;z-index:5;margin-top:-28px;padding:0 clamp(12px,3vw,34px)
 .inside{padding:20px clamp(17px,4vw,36px) 30px}
 .facts{list-style:none;margin:0;padding:0}
 .facts li{padding:10px 0;border-bottom:1px dashed var(--line)}
+
 .poem{margin-top:24px;padding:22px clamp(13px,3vw,25px);border:1px solid var(--line);border-radius:19px;background:#fffdf9}
 .poem h3{margin:0;color:#71351d;font-size:1.4rem}
 .author{color:#8b6146;margin:3px 0 12px}
 .poem-text{white-space:pre-wrap;overflow-wrap:anywhere;line-height:2.05}
+
 .section-title{display:flex;align-items:center;gap:12px;margin:32px 0 14px}
 .section-title:before,.section-title:after{content:"";height:1px;flex:1;background:#a56c35}
 .section-title h2{margin:0;font:700 clamp(1.5rem,3vw,2rem) "Aref Ruqaa",serif}
@@ -79,6 +83,7 @@ main{position:relative;z-index:5;margin-top:-28px;padding:0 clamp(12px,3vw,34px)
 .work:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,#241006dd)}
 .work span{position:absolute;z-index:2;right:12px;bottom:11px;color:#fff;font-weight:800;text-align:right}
 .work small{display:block;font:400 .72rem Georgia,serif;letter-spacing:.1em}
+
 .quiz{margin-top:30px;padding:clamp(19px,4vw,34px);border-radius:26px;background:#fffaf2f7;box-shadow:var(--shadow)}
 .quiz-head{display:flex;justify-content:space-between;align-items:end}
 .quiz h2{margin:0;font:700 2rem "Aref Ruqaa",serif}
@@ -96,12 +101,14 @@ main{position:relative;z-index:5;margin-top:-28px;padding:0 clamp(12px,3vw,34px)
 .show{display:inline-block}
 .result{text-align:center;padding:18px}
 .score{font-size:3rem;font-weight:800;color:#71371f}
+
 footer{text-align:center;padding:25px 15px 110px;color:#70503c}
 .bottom-nav{position:fixed;z-index:40;left:50%;bottom:0;transform:translateX(-50%);width:min(1180px,100%);display:grid;grid-template-columns:repeat(5,1fr);padding:8px 5px calc(8px + env(safe-area-inset-bottom));background:#fffaf2f5;backdrop-filter:blur(12px);border-top:1px solid var(--line);box-shadow:0 -8px 25px #4a2d1c18}
 .nav{text-align:center;font-size:.72rem}
 .nav b{display:block;font-size:1.4rem;line-height:1.15}
 .nav.active{color:#9b5918;font-weight:800}
 .nav.logo b{color:#94362d;font-size:1.75rem}
+
 .modal{position:fixed;z-index:100;inset:0;display:none;align-items:center;justify-content:center;padding:15px;background:#241007aa}
 .modal.open{display:flex}
 .panel{width:min(960px,100%);max-height:90vh;display:grid;grid-template-columns:minmax(280px,42%) 1fr;overflow:auto;border-radius:25px;background:var(--paper);box-shadow:0 25px 70px #1c0b064d}
@@ -113,6 +120,16 @@ footer{text-align:center;padding:25px 15px 110px;color:#70503c}
 .modal h2{margin:4px 0 8px;font:700 clamp(2rem,4vw,2.7rem) "Aref Ruqaa",serif}
 .modal-content p{color:#5f4434}
 .content-space{min-height:130px;margin-top:15px;padding:18px;border:1px dashed #b88b5d;border-radius:15px;background:#fff4e2;color:#7a5842}
+.article-open .panel{width:min(1120px,100%);grid-template-columns:minmax(300px,40%) 1fr}
+.article-open .modal-media{position:sticky;top:0;height:90vh}
+.article-open .modal-content{justify-content:flex-start}
+.article-open #modalDesc:empty{display:none}
+.article-body{margin-top:12px}
+.article-body h3{margin:30px 0 8px;padding-right:13px;border-right:4px solid #a5652d;color:#62331e;font:700 clamp(1.45rem,3vw,1.9rem) "Aref Ruqaa",serif}
+.article-body p{margin:0 0 17px;color:#4d382d;font-size:1.06rem;line-height:2.05;text-align:justify}
+.article-inline{margin:25px 0 8px;overflow:hidden;border-radius:18px;background:#d8ad7a;box-shadow:0 10px 28px #57321f21}
+.article-inline img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.article-inline figcaption{padding:9px 13px;background:#f5e3c7;color:#76503a;font-size:.9rem}
 .back{align-self:flex-start;margin-top:18px;padding:10px 18px;border:0;border-radius:11px;background:#74412a;color:#fff;cursor:pointer}
 .search-panel{display:block;width:min(660px,100%);padding:24px}
 .search-panel .close{position:static;float:left}
@@ -123,6 +140,7 @@ footer{text-align:center;padding:25px 15px 110px;color:#70503c}
 .drawer button{float:left;width:40px;height:40px;border:0;border-radius:50%;cursor:pointer}
 .drawer h2{font:700 2rem "Aref Ruqaa",serif}
 .drawer a{display:block;padding:11px 3px;border-bottom:1px solid var(--line);font-weight:700}
+
 @media(max-width:760px){
 .hero{height:620px}
 .hero-media img{object-position:center 66%}
@@ -148,10 +166,14 @@ main{margin-top:-20px}
 .choices{grid-template-columns:1fr}
 .modal{align-items:flex-end;padding:0}
 .panel{display:block;max-height:94vh;border-radius:23px 23px 0 0}
-.modal-media{min-height:220px;height:220px}
+.modal-media,.article-open .modal-media{position:relative;min-height:220px;height:220px}
 .modal-content{display:block;padding:21px 17px 25px}
+.article-body p{font-size:1rem;line-height:2;text-align:right}
+.article-body h3{margin-top:25px}
+.article-inline{margin-inline:-3px}
 .content-space{min-height:115px}
 .search-panel{padding:20px}
+.bottom-nav{grid-template-columns:repeat(5,1fr)}
 }
 @media(max-width:390px){
 .motto{display:none}
@@ -166,45 +188,31 @@ main{margin-top:-20px}
 </style>
 </head>
 <body>
-
 <div class="site">
-
 <header class="hero" id="home">
-
 <figure class="hero-media">
 <picture>
 <source media="(max-width:760px)" srcset="https://mgx-backend-cdn.metadl.com/generate/images/1016862/2026-03-11/25ec84eb-1b23-4df8-b4fa-e00ae7ee201d.png">
 <img src="https://media.easy-peasy.ai/11211be0-b486-4385-b29f-f0bfb9d658d3/6152b775-b734-47d3-847a-5667269095a3.png" alt="خيمة صحراوية سوداء وإبل وأشخاص ونخيل وكثبان عند الغروب" onerror="this.style.display='none'">
 </picture>
 </figure>
-
 <div class="topbar">
 <div class="tools">
 <button class="icon-btn" type="button" aria-label="فتح القائمة" onclick="drawer(true)">☰</button>
 <button class="icon-btn" type="button" aria-label="البحث" onclick="searchBox(true)">⌕</button>
 </div>
-
-<div class="mini">
-<div class="mark">⟁</div>
-<b>خيمة البيظان</b>
-<small>Khaymt El Bidan</small>
-</div>
-
+<div class="mini"><div class="mark">⟁</div><b>خيمة البيظان</b><small>Khaymt El Bidan</small></div>
 <div class="motto">تراث<br>معرفة<br>إبداع<br>أمة</div>
 </div>
-
 <div class="hero-copy">
 <h1>خيمة البيظان</h1>
 <div class="latin">Khaymt El Bidan</div>
 <p>تراث • معرفة • إنجاز</p>
 </div>
-
 <div class="hero-note">الصحراء<br>ذاكرة حيّة</div>
-
 </header>
 
 <main>
-
 <section class="portal-grid" id="portals" aria-label="بوابات خيمة البيظان"></section>
 
 <section id="featured">
@@ -214,16 +222,11 @@ main{margin-top:-20px}
 
 <section class="quiz" id="quiz">
 <div class="quiz-head">
-<div>
-<h2>تحدي المعرفة</h2>
-<p>اختبر معرفتك بالتراث</p>
-</div>
+<div><h2>تحدي المعرفة</h2><p>اختبر معرفتك بالتراث</p></div>
 <b id="count"></b>
 </div>
-
 <div class="progress" id="progress"></div>
 <div id="quizContent"></div>
-
 <div class="quiz-foot">
 <span id="feedback" aria-live="polite"></span>
 <div>
@@ -232,12 +235,9 @@ main{margin-top:-20px}
 </div>
 </div>
 </section>
-
 </main>
 
-<footer>
-خيمة البيظان — بوابة تفاعلية لتوثيق تراث الصحراء الغربية وموريتانيا والطوارق
-</footer>
+<footer>خيمة البيظان — بوابة تفاعلية لتوثيق تراث الصحراء الغربية وموريتانيا والطوارق</footer>
 
 <nav class="bottom-nav" aria-label="التنقل الرئيسي">
 <a class="nav active" href="#home"><b>⌂</b>الرئيسية</a>
@@ -246,7 +246,6 @@ main{margin-top:-20px}
 <a class="nav" href="#featured"><b>♡</b>المفضلة</a>
 <a class="nav" href="#quiz"><b>◯</b>التحدي</a>
 </nav>
-
 </div>
 
 <aside class="drawer" id="drawer">
@@ -263,343 +262,37 @@ main{margin-top:-20px}
 
 <div class="modal" id="sectionModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeSection()">
 <div class="panel">
-
 <div class="modal-media">
 <img id="modalImage" src="" alt="صورة القسم">
 <button class="close" type="button" aria-label="إغلاق" onclick="closeSection()">×</button>
 </div>
-
 <div class="modal-content">
 <div class="kicker" id="modalKicker"></div>
 <h2 id="modalTitle"></h2>
 <p id="modalDesc"></p>
-
-<div class="content-space">
-مساحة مخصصة لإضافة محتوى هذا القسم: مقالات، صور، تسجيلات، فيديوهات أو وثائق.
-</div>
-
+<div class="content-space" id="modalBody">مساحة مخصصة لإضافة محتوى هذا القسم: مقالات، صور، تسجيلات، فيديوهات أو وثائق.</div>
 <button class="back" type="button" onclick="closeSection()">رجوع إلى البوابات</button>
 </div>
-
 </div>
 </div>
 
 <div class="modal" id="searchModal" role="dialog" aria-modal="true" onclick="if(event.target===this)searchBox(false)">
 <div class="panel search-panel">
-
 <button class="close" type="button" onclick="searchBox(false)">×</button>
-
 <h2>البحث في خيمة البيظان</h2>
-
 <input id="searchInput" type="search" placeholder="اكتب اسم قسم أو موضوع..." oninput="runSearch()">
-
-<div class="results" id="results">
-اكتب كلمة للبحث داخل البوابات والأقسام.
-</div>
-
+<div class="results" id="results">اكتب كلمة للبحث داخل البوابات والأقسام.</div>
 </div>
 </div>
 
 <template id="poetryDetails">
-
 <ul class="facts">
-
-<li>
-<b>الشعر الحساني:</b>
-فن قولي منظوم بحوره الخاصة، يروى شفاهاً في المجالس ويحفظ عن ظهر قلب.
-</li>
-
-<li>
-<b>الأمثال:</b>
-خلاصة تجارب الأولين، تُستخدم في الحياة اليومية كحجة وفصل في الخلاف.
-</li>
-
-<li>
-<b>المسرح الصحراوي:</b>
-تمثيل شعبي يعيد سرد الملاحم والمواقف الاجتماعية أمام الجمهور.
-</li>
-
+<li><b>الشعر الحساني:</b> فن قولي منظوم بحوره الخاصة، يروى شفاهاً في المجالس ويحفظ عن ظهر قلب.</li>
+<li><b>الأمثال:</b> خلاصة تجارب الأولين، تُستخدم في الحياة اليومية كحجة وفصل في الخلاف.</li>
+<li><b>المسرح الصحراوي:</b> تمثيل شعبي يعيد سرد الملاحم والمواقف الاجتماعية أمام الجمهور.</li>
 </ul>
-
 <section class="poem">
-
 <h3>يالدلال أعليك المنيَ</h3>
-
-<div class="author">
-للأديب بادي ولد محمد سالم — رحمه الله
-</div>
-
+<div class="author">للأديب بادي ولد محمد سالم — رحمه الله</div>
 <div class="poem-text">يالـــدّلال أعليـــــــــك المنيَ فالدّنيا ماخــــلاّت أگدح
-باش أترگ اعليــــــك الدنيا خرص فالفِيّــــاظ ؤلفكح
-حد أعل لفكح فــايت خاظ مـــــرات وعرّص فالفيّاظ
-بين أكحال الحجره وأبياظ البـــطحه دوْرس وأتبطح
-عهد الشبــــاب ؤكال أرياظ لفــكح والفيّــــاظ وأفكح
-تحت أمّـــو ماگام أشَظَـاظ مـــــــــانلّ گاع ؤلاهو وَح
-ينعد أعل روص الحفّــــاظ مطرّگ مـــــــــزال إيلحلح
-مسحّم بالمسك ولخــــواظ روْرح وأستمـلح وأتفروح
-ؤوخظ بين أشيوخ الگراظ ماحنحـــــــــلو حد ؤلاكح
-سمّــاع وشـــوّاف وحفـّـاظ ؤلاگط أشبــابو بيه أطفح
-عن شي بيه إيلاجَ يغتـــاظ فالناس ويرجـــع مانفظح
-فوطانــــو مستغرظ تگباظ دلوْ الدنيـــــا بيدو وأطرح
-حوظو متمونك بين أحياظ لفكح والفيّـــــاظ أمگروح
-مايخشَ من جيـــــها ترياظ إروح أفلمـــــــان ويسرح
-ؤخاظ اليوم أعل لفكح عاظ كابيـــتْ الشيخوخه يدلح
-فالفيــــــظه راگب واللّ گاظ گاطعها من تحت المطلح
-من بل أمنيــــن الواد أعراظ أهلو وأحبـــــــابو لمرشّح
-مارَ من ذكامـــــــــــــل گبّاظ أخبــــار ؤوّللّ مستكسح
-ماتنشــاف أعليـــه إيل خاظ الشيطــــان وتاب ؤسبّح
-وسّگـــــــم بالفعــل وللْفـــاظ شور اللّي باخرتو يصلح</div>
-
-</section>
-
-<section class="poem">
-
-<h3>دمع العين</h3>
-
-<div class="poem-text">مشى دمع العين التفگاد==بزوان ءونست لغياد
-والشبان وتفگاد امراد==عگلي فاتت فالدهر اعليه
-ماهو ذا الدهر وگيم زاد==العگلي لحنين الماضيه
-وگام الحزم من اشطيط ارگاد==الحزم على دمعي يمريه
-ويمشيه على ماضي گاد==ما يجبر فيه اللي يبكيه
-غير اعيا ول آدم ينزاد==حزمو من شي عاد امعسريه
-
-تعيا عينو بالدمع اتجود==گاع الا تختير اتمشيه
-واعيات املي زاد اتعود==مسكينة ما تتحكم فيه
-
-شين على حد اكبير يظل==دمعو تيجكريت يهطل
-ويبات اميرر ماورظل==دمعو رمشت عين افعينيه
-يبكي دهرو مزال اطفل== مسكين أيام الطرب اعليه
-باكي فيه انو عاد اكهل==واستطفيلو ذاك اسمح فيه
-وعاد افطربو ذاك امگلل==وياسر من طربو مستنسيه
-
-تعيا عينو بالدمع اتجود==گاع ألا تختير اتمشيه
-واعيات املي زاد اتعود==مسكينة ما تتحكم فيه</div>
-
-<div class="author">
-#الزعيم_علال_الداف
-</div>
-
-</section>
-
-</template>
-
-<script>
-const portals=[
-{
-id:'poetry',
-icon:'▤',
-title:'بوابة الأدب والشعر',
-sub:'لغة الحسانية والأمثال والمسرح',
-intro:'الشعر الحساني ليس زخرفة لسانية بل سجل اجتماعي كامل — فيه المدح والهجاء والغزل والحكمة، ينتقل من فم إلى فم عبر الأجيال.',
-img:'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1000&q=85',
-alt:'كتب وريشة ترمزان إلى الأدب والشعر',
-branches:[
-['الشعر الحساني','فن قولي منظوم بحوره الخاصة، يروى شفاهاً في المجالس ويحفظ عن ظهر قلب.'],
-['الأمثال الحسانية','خلاصة تجارب الأولين، تُستخدم في الحياة اليومية كحجة وفصل في الخلاف.'],
-['المسرح الصحراوي','تمثيل شعبي يعيد سرد الملاحم والمواقف الاجتماعية أمام الجمهور.'],
-['التراث الأدبي','ذاكرة القول والحكاية والشعر والمسرح في المجتمع الصحراوي.']
-]
-},
-{
-id:'music',
-icon:'♫',
-title:'بوابة أزوان والألحان',
-sub:'الآزوان والآلات التقليدية',
-intro:'موسيقى الآزوان نظام لحني متكامل له قواعده الخاصة.',
-img:'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1000&q=85',
-alt:'آلة موسيقية ترمز إلى الآزوان',
-branches:[
-['الآزوان','نظام موسيقي حساني متكامل يقوم على مقامات وطرق أداء متوارثة.'],
-['الألحان','مساحة لتوثيق الألحان والمقامات وطرائق الأداء.'],
-['الثقافة الموسيقية','تعريف بآلات الموسيقى الصحراوية وسياقاتها الاجتماعية.'],
-['الفنانون','مساحة للتعريف بالفنانين وحفظ أعمالهم وسيرهم.'],
-['التراث الموسيقي','أرشيف للألحان والآلات والتسجيلات الموسيقية التقليدية.']
-]
-},
-{
-id:'society',
-icon:'◇',
-title:'مجتمع البيظان',
-sub:'العادات والتقاليد والحياة اليومية',
-intro:'فضاء يوثّق اللباس والخيمة والضيافة والمناسبات والحرف والحياة الاجتماعية.',
-img:'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=1000&q=85',
-alt:'خيمة وحياة صحراوية',
-branches:[
-['الملحفة والدراعة','اللباس الصحراوي التقليدي بما يحمله من هوية وذوق وذاكرة.'],
-['الخيمة والحياة اليومية','الخيمة بوصفها بيتًا وفضاءً للاجتماع والعمل والحكاية.'],
-['الشاي والضيافة','طقوس إعداد الشاي ومعاني الكرم واللقاء في المجتمع.'],
-['الأعراس والمناسبات','عادات الفرح والمناسبات الاجتماعية وما يرافقها من طقوس.'],
-['الأكل التقليدي','أطباق الصحراء وطرق إعدادها وسياقات تقديمها.'],
-['الحرف والأدوات','حرف يدوية وأدوات صنعتها الحاجة والخبرة والبيئة.'],
-['الحياة الاجتماعية والعائلية','العلاقات الأسرية وأنماط التعاون والتكافل داخل المجتمع.'],
-['الإبل','مكانة الإبل في التنقل والمعيشة والثقافة الصحراوية.']
-]
-},
-{
-id:'history',
-icon:'⌛',
-title:'بوابة الذاكرة والتاريخ',
-sub:'الصحراء الغربية وموريتانيا والطوارق',
-intro:'من دروب القوافل القديمة إلى الحاضر، تاريخ منطقة شكّلتها التجارة والترحال والصمود.',
-img:'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1000&q=85',
-alt:'كثبان ترمز إلى الذاكرة والتاريخ',
-branches:[
-['الذاكرة','ذاكرة الناس والأماكن والأحداث كما حفظتها الرواية والصورة والوثيقة.'],
-['القوافل','شبكة تجارية ربطت الصحراء بغرب أفريقيا وشمالها عبر قرون.'],
-['المجتمع','نظام اجتماعي نظّم العلاقات والتحالفات والموارد.'],
-['التراث','الموروث المادي والشفهي الذي يحمل ذاكرة المنطقة.']
-]
-},
-{
-id:'articles',
-icon:'✎',
-title:'المقالات',
-sub:'قراءات وتحليلات من الصحراء والعالم',
-intro:'مقالات ثقافية وتاريخية واجتماعية، ودراسات وآراء تحفظ تعدد الأصوات.',
-img:'https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=1000&q=85',
-alt:'أوراق وقلم يرمزان إلى المقالات',
-branches:[
-['المقالات المحلية','قراءات في قضايا المجتمع والثقافة من داخل المنطقة.'],
-['المقالات الدولية','قراءات دولية متصلة بالصحراء والثقافة والإنسان.'],
-['الدراسات والبحوث','مساحة للبحوث والدراسات والمراجع المتخصصة.'],
-['آراء وكتاب','مقالات رأي ونصوص لكتّاب وباحثين.'],
-['الثقافة','مقالات في الأدب والفنون والهوية والتراث.']
-]
-},
-{
-id:'library',
-icon:'▣',
-title:'المكتبة والأرشيف',
-sub:'صور ووثائق وتسجيلات نادرة',
-intro:'ذاكرة بصرية وسمعية تجمع المواد القديمة وتحفظها للباحثين والأجيال.',
-img:'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1000&q=85',
-alt:'مكتبة وأرشيف',
-branches:[
-['الصور القديمة','صور تاريخية وعائلية ومشاهد تحفظ تفاصيل المكان والإنسان.'],
-['الوثائق','وثائق ومراسلات ومخطوطات ذات قيمة تاريخية وثقافية.'],
-['التسجيلات الصوتية','أصوات وروايات وأغانٍ وتسجيلات محفوظة من الذاكرة الشفوية.'],
-['الفيديوهات النادرة','مواد مرئية نادرة توثّق الحياة والأحداث والفنون.'],
-['الشخصيات والأحداث','توثيق لسير الشخصيات والمحطات والأحداث المهمة.'],
-['AI Sahara','مساحة إبداعية توظّف الذكاء الاصطناعي لخدمة الذاكرة والثقافة الصحراوية.']
-]
-}
-];
-
-const images={
-'الشعر الحساني':'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1000&q=85',
-'الأمثال الحسانية':'https://miro.medium.com/1%2Akc4-rXOOrUs97eNeh_grBw.png',
-'المسرح الصحراوي':'https://images.unsplash.com/photo-1503095396549-807759245b35?w=1000&q=85',
-'التراث الأدبي':'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1000&q=85',
-'الآزوان':'https://ich.unesco.org/img/photo/src/03825.jpg',
-'الألحان':'https://images.unsplash.com/photo-1499415479124-43c32433a620?w=1000&q=85',
-'الثقافة الموسيقية':'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=1000&q=85',
-'الفنانون':'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1000&q=85',
-'التراث الموسيقي':'https://images.unsplash.com/photo-1461360228754-6e81c478b882?w=1000&q=85',
-'الملحفة والدراعة':'https://i.pinimg.com/originals/aa/46/cc/aa46cce25af155687f6df50c257a120d.jpg',
-'الخيمة والحياة اليومية':'https://donordock-email-images.s3.us-east-1.amazonaws.com/1711218924012-357412.png',
-'الشاي والضيافة':'https://static.wixstatic.com/media/337589_f723be6f066f4eb883459809fd084afa~mv2.jpg',
-'الأعراس والمناسبات':'https://media.abcsalles.com/images/1/articles/960x640/845446/le-repas-traditionnel-de-mariage-en-mauritanie-entre-sobriete-saharienne-et-faste-nomade-1.png',
-'الأكل التقليدي':'https://images.unsplash.com/photo-1547592180-85f173990554?w=1000&q=85',
-'الحرف والأدوات':'https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=1000&q=85',
-'الحياة الاجتماعية والعائلية':'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1000&q=85',
-'الإبل':'https://www.bestfortravel.com/fileadmin/reisen/_processed_/c/f/csm_marokko_sahara_kamel_wueste_stock.adobe.com_bert_181065812_3e94b87277.jpeg',
-'الذاكرة':'https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=1000&q=85',
-'القوافل':'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1000&q=85',
-'المجتمع':'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1000&q=85',
-'التراث':'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=1000&q=85',
-'المقالات المحلية':'https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=1000&q=85',
-'المقالات الدولية':'https://images.unsplash.com/photo-1495020689067-958852a7765e?w=1000&q=85',
-'الدراسات والبحوث':'https://images.unsplash.com/photo-1532012197267-da84d127e765?w=1000&q=85',
-'آراء وكتاب':'https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=1000&q=85',
-'الثقافة':'https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=1000&q=85',
-'الصور القديمة':'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1000&q=85',
-'الوثائق':'https://vumbiventures.com/uploads/uploads/headers/T5r8zxV4gsGxX4FO0SXVju3SwZm2TIN9lWbdspv2.png',
-'التسجيلات الصوتية':'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=1000&q=85',
-'الفيديوهات النادرة':'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1000&q=85',
-'الشخصيات والأحداث':'https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=1000&q=85',
-'AI Sahara':'https://miro.medium.com/1%2AYVHgYyG1nrlfYuC92opJOA.jpeg',
-'مقالات مختارة':'https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=1000&q=85',
-'بوسترات وتصاميم':'https://images.unsplash.com/photo-1545235617-9465d2a55698?w=1000&q=85',
-'الخط والهوية البصرية':'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1000&q=85',
-'مشاريع ثقافية':'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1000&q=85'
-};
-
-const facts={
-music:`
-<ul class="facts">
-<li><b>التيدنيت:</b> آلة وترية يعزفها الرجال، عمود الآزوان الأساسي.</li>
-<li><b>الآردين:</b> آلة قيثارية تعزفها النساء، صوتها المميز في الأعراس والمناسبات.</li>
-<li><b>الإمزاد:</b> آلة الطوارق ذات الوتر الواحد، ترتبط بالشعر والغناء الطارقي.</li>
-</ul>
-`,
-history:`
-<ul class="facts">
-<li><b>طرق القوافل:</b> شبكة تجارية ربطت الصحراء بغرب أفريقيا وشمالها عبر قرون.</li>
-<li><b>البنية القبلية:</b> نظام اجتماعي نظّم العلاقات والتحالفات والموارد.</li>
-<li><b>الحاضر المعاصر:</b> قضايا الهوية والانتماء التي لا تزال تشكّل حياة أهل المنطقة اليوم.</li>
-</ul>
-`
-};
-
-function portalHTML(portal){
-let body;
-
-if(portal.id==='poetry'){
-body=document.getElementById('poetryDetails').innerHTML;
-}else{
-body=facts[portal.id]||`<p>${portal.intro} اختر قسمًا فرعيًا لفتحه في بطاقة مستقلة.</p>`;
-}
-
-return `
-<article class="portal" id="${portal.id}">
-
-<div class="portal-img">
-<img src="${portal.img}" alt="${portal.alt}" onerror="this.style.display='none'">
-</div>
-
-<div
-class="portal-main"
-role="button"
-tabindex="0"
-onclick="togglePortal(event,this)"
-onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();togglePortal(event,this)}"
->
-
-<div class="portal-title">
-<div class="portal-icon">${portal.icon}</div>
-<div>
-<h2>${portal.title}</h2>
-<div class="portal-sub">${portal.sub}</div>
-</div>
-</div>
-
-<p class="portal-intro">${portal.intro}</p>
-
-<div class="branches">
-${portal.branches.map(branch=>`
-<button
-class="branch"
-type="button"
-data-title="${branch[0]}"
-data-desc="${branch[1]}"
->
-${branch[0]}
-</button>
-`).joinm('/></div><button class="expand" type="button" aria-label="فتح البوابة">⌄</button></div><div class="portal-body"><div><div class="inside">${body}</div></div></div></article>`}
-document.getElementById('portals').innerHTML=portals.map(portalHTML).join('');
-document.querySelectorAll('.branch').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();openSection(b.dataset.title,b.dataset.desc)}));
-function togglePortal(e,el){if(e.target.closest('.branch'))return;const p=el.closest('.portal'),open=!p.classList.contains('open');p.classList.toggle('open',open);el.setAttribute('aria-expanded',open)}
-function openSection(title,desc){const m=document.getElementById('sectionModal'),img=document.getElementById('modalImage');document.getElementById('modalKicker').textContent='بوابة مستقلة';document.getElementById('modalTitle').textContent=title;document.getElementById('modalDesc').textContent=desc;img.src=images[title];img.alt=`صورة مرتبطة بقسم ${title}`;img.style.display='block';img.onerror=()=>img.style.display='none';m.classList.add('open');document.body.classList.add('lock')}
-function closeSection(){document.getElementById('sectionModal').classList.remove('open');document.body.classList.remove('lock')}
-const works=[['مقالات مختارة','EDITORIAL'],['بوسترات وتصاميم','POSTERS'],['الخط والهوية البصرية','TYPE & BRANDING'],['مشاريع ثقافية','CULTURAL PROJECTS']];document.getElementById('works').innerHTML=works.map(w=>`<button class="work" type="button"><img src="${images[w[0]]}" alt="${w[0]}" onerror="this.style.display='none'"><span>${w[0]}<small>${w[1]}</small></span></button>`).join('');document.querySelectorAll('.work').forEach((b,i)=>b.onclick=()=>openSection(works[i][0],'مختارات من أعمال وإصدارات خيمة البيظان.'));
-function drawer(open){document.getElementById('drawer').classList.toggle('open',open)}document.querySelectorAll('.drawer a').forEach(a=>a.onclick=()=>drawer(false));
-function searchBox(open){document.getElementById('searchModal').classList.toggle('open',open);document.body.classList.toggle('lock',open);if(open)setTimeout(()=>document.getElementById('searchInput').focus(),0)}
-function runSearch(){const q=document.getElementById('searchInput').value.trim().toLowerCase(),r=document.getElementById('results');if(!q){r.textContent='اكتب كلمة للبحث داخل البوابات والأقسام.';return}const found=portals.filter(p=>(p.title+p.sub+p.intro+p.branches.flat().join(' ')).toLowerCase().includes(q));r.innerHTML=found.length?found.map(p=>`<a href="#${p.id}" onclick="searchBox(false)">← ${p.title}</a>`).join(''):'لا توجد نتيجة مطابقة.'}
-const questions=[{q:'ما اسم الآلة الوترية التي يعزفها الرجال في موسيقى الآزوان؟',c:['التيدنيت','الآردين','الإمزاد','الدف'],a:0},{q:'آلة الإمزاد ذات الوتر الواحد ترتبط بثقافة أي شعب؟',c:['الفولاني','الطوارق','الوولوف','البمبارا'],a:1},{q:'ما الدور الأساسي للأمثال الشعبية في المجتمع الصحراوي؟',c:['الترفيه فقط','تعليم الأطفال القراءة','خلاصة تجارب تُستخدم في فصل الخلافات','تمجيد الحكام'],a:2},{q:'الآردين آلة موسيقية يعزفها في العادة:',c:['الرجال','النساء','الأطفال','الشيوخ فقط'],a:1},{q:'طرق القوافل الصحراوية القديمة ربطت المنطقة بـ:',c:['أوروبا فقط','غرب أفريقيا وشمالها','آسيا','لا شيء، كانت معزولة'],a:1}];const next=document.getElementById('next'),restart=document.getElementById('restart'),feedback=document.getElementById('feedback'),count=document.getElementById('count'),progress=document.getElementById('progress'),quizContent=document.getElementById('quizContent');let qi=0,score=0,answered=false;
-function renderQuiz(){answered=false;next.classList.remove('show');restart.classList.remove('show');feedback.textContent='';count.textContent=`${qi+1} / ${questions.length}`;progress.innerHTML=questions.map((_,i)=>`<span class="${i<qi?'done':''}"></span>`).join('');const q=questions[qi];quizContent.innerHTML=`<div class="question">${q.q}</div><div class="choices">${q.c.map((x,i)=>`<button class="choice" type="button" onclick="answer(${i})">${x}</button>`).join('')}</div>`}
-function answer(i){if(answered)return;answered=true;const q=questions[qi],btn=[...document.querySelectorAll('.choice')];btn.forEach((b,n)=>{b.disabled=true;if(n===q.a)b.classList.add('correct');else if(n===i)b.classList.add('wrong')});if(i===q.a){score++;feedback.textContent='إجابة صحيحة'}else feedback.textContent='إجابة غير صحيحة';next.classList.add('show');next.textContent=qi===questions.length-1?'عرض النتيجة':'التالي'}
-function nextQuestion(){qi++;qi>=questions.length?showResult():renderQuiz()}function showResult(){next.classList.remove('show');progress.innerHTML=questions.map(()=>'<span class="done"></span>').join('');let level='مبتدئ';if(score>=4)level='خبير';else if(score>=3)level='متمرّس';quizContent.innerHTML=`<div class="result"><h3>مستوى: ${level}</h3><div class="score">${score} / ${questions.length}</div><p>أجبت بشكل صحيح على ${score} من أصل ${questions.length} أسئلة حول تراث الصحراء والحسانية والطوارق.</p></div>`;restart.classList.add('show')}
-function restartQuiz(){qi=0;score=0;renderQuiz()}document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeSection();searchBox(false);drawer(false)}});document.querySelectorAll('.nav').forEach(a=>a.onclick=()=>{document.querySelectorAll('.nav').forEach(n=>n.classList.remove('active'));a.classList.add('active')});renderQuiz();
-</script>
-</body>
-</html>
+باش أترگ اعليــــــك الدنيا خرص فالفِيّ
